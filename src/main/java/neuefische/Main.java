@@ -21,7 +21,7 @@ public class Main {
         student1.setGrade(5);
         System.out.println(student1.getGrade());
 
-        course.setName("Biology advanced");
+
         System.out.println(course.getName());
 
         Student specialStudent = Student.builder()
@@ -59,5 +59,15 @@ public class Main {
         Teacher specialTeacher2 = specialTeacher.withName("Erick");
         System.out.println(specialTeacher2);
 
+
+
+        Uni uni = new Uni(1, "Humbolt Uni",new ArrayList<>(Arrays.asList(course, course1)));
+        System.out.println(uni);
+
+        System.out.println(UniService.getAverageGrade(course));
+
+        System.out.println(UniService.getAverageGradePerUni(uni));
+
+        System.out.println(UniService.getAllStudentsWithGradeGood(uni));
     }
 }
